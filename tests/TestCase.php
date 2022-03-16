@@ -8,11 +8,12 @@ use Spatie\WebhookClient\WebhookClientServiceProvider;
 
 class TestCase extends Orchestra
 {
-    public function setUp(): void
+    public function setUp()
     {
         parent::setUp();
 
         $this->setUpDatabase();
+        ini_set('memory_limit', '2G');
     }
 
     protected function getPackageProviders($app)

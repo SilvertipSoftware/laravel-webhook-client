@@ -16,7 +16,7 @@ class WebhookCall extends Model
         'exception' => 'array',
     ];
 
-    public static function storeWebhook(WebhookConfig $config, Request $request): WebhookCall
+    public static function storeWebhook(WebhookConfig $config, Request $request)
     {
         return self::create([
             'name' => $config->name,

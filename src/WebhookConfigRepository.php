@@ -12,8 +12,8 @@ class WebhookConfigRepository
         $this->configs[$webhookConfig->name] = $webhookConfig;
     }
 
-    public function getConfig(string $name): ?WebhookConfig
+    public function getConfig($name)
     {
-        return $this->configs[$name] ?? null;
+        return !empty($this->configs[$name]) ? $this->configs[$name] : null;
     }
 }

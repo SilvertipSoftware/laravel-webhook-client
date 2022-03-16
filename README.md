@@ -144,7 +144,7 @@ use Spatie\WebhookClient\WebhookConfig;
 
 interface SignatureValidator
 {
-    public function isValid(Request $request, WebhookConfig $config): bool;
+    public function isValid(Request $request, WebhookConfig $config);
 }
 ```
 
@@ -169,7 +169,7 @@ use Illuminate\Http\Request;
 
 interface WebhookProfile
 {
-    public function shouldProcess(Request $request): bool;
+    public function shouldProcess(Request $request)
 }
 ```
 

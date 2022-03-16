@@ -7,7 +7,7 @@ use Spatie\WebhookClient\WebhookProfile\WebhookProfile;
 
 class ProcessNothingWebhookProfile implements WebhookProfile
 {
-    public function shouldProcess(Request $request): bool
+    public function shouldProcess(Request $request)
     {
         return false;
     }

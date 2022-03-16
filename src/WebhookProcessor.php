@@ -47,12 +47,14 @@ class WebhookProcessor
         return $this;
     }
 
-    protected function storeWebhook(): WebhookCall
+    protected function storeWebhook()
     {
-        return $this->config->webhookModel::storeWebhook($this->config, $this->request);
+        //$class = $this->config->webhookModel;
+        //dd($this->config->webhookModel);
+        return \Spatie\WebhookClient\Models\WebhookCall::storeWebhook($this->config, $this->request);
     }
 
-    protected function processWebhook(WebhookCall $webhookCall): void
+    protected function processWebhook(WebhookCall $webhookCall)
     {
         try {
             $job = new $this->config->processWebhookJob($webhookCall);

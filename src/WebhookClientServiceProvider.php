@@ -25,7 +25,7 @@ class WebhookClientServiceProvider extends ServiceProvider
             ], 'migrations');
         }
 
-        Route::macro('webhooks', function (string $url, string $name = 'default') {
+        Route::macro('webhooks', function ($url, $name = 'default') {
             return Route::post($url, '\Spatie\WebhookClient\WebhookController')->name("webhook-client-{$name}");
         });
 
