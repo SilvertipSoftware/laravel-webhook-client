@@ -22,6 +22,8 @@ composer require spatie/laravel-webhook-client
 
 ### Configuring the package
 
+Add to provider in config/app.php: Spatie\WebhookClient\WebhookClientServiceProvider::class
+
 You can publish the config file with:
 
 ```bash

@@ -60,6 +60,7 @@ class WebhookClientServiceProvider extends ServiceProvider
 
     public function register()
     {
+        $this->boot();
         $this->mergeConfigFrom(__DIR__.'/../config/webhook-client.php', 'webhook-client');
     }
 }
